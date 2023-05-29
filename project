@@ -1,0 +1,24 @@
+// Code for final project by Nathan Diepgrond
+
+import Adafruit_DHT
+import time
+// imported libraries
+
+DHT_SENSOR = Adafruit_DHT.DHT11
+DHT_PIN = 4
+// declared pins on raspberry pi
+
+while True:
+        humidity, temperature = Adafruit_DHT.read(DHT_SENSOR, DHT_PIN)
+        if humidity is not None and temperature is not None:
+                print ("Temp={0:0.1f}C Humidity={1:0.1f}%".format(temperature, >
+        else:
+                print ("Invalid Temp, Please Adjust Sensor");
+// if-else statement for printing results
+
+        if temperature >= 20:
+                print ("Caution! Candle is too hot!");
+// if statement for alert
+
+        time.sleep(5);
+// time interval between readings
